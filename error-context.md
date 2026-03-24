@@ -1,0 +1,76 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - img [ref=e4]
+      - text: Amtrana Bar
+    - generic [ref=e6]:
+      - link "Dashboard" [ref=e7] [cursor=pointer]:
+        - /url: /
+        - img [ref=e8]
+        - generic [ref=e13]: Dashboard
+      - link "Godown" [active] [ref=e14] [cursor=pointer]:
+        - /url: /godown
+        - img [ref=e15]
+        - generic [ref=e17]: Godown
+      - link "Counter" [ref=e18] [cursor=pointer]:
+        - /url: /counter
+        - img [ref=e19]
+        - generic [ref=e22]: Counter
+      - link "Reports" [ref=e23] [cursor=pointer]:
+        - /url: /reports
+        - img [ref=e24]
+        - generic [ref=e27]: Reports
+      - link "Settings" [ref=e28] [cursor=pointer]:
+        - /url: /settings
+        - img [ref=e29]
+        - generic [ref=e32]: Settings
+  - main [ref=e33]:
+    - generic [ref=e34]:
+      - generic [ref=e36]:
+        - heading "Godown Storage" [level=1] [ref=e37]
+        - paragraph [ref=e38]: Manage incoming supplier deliveries and transfer boxed stock to the front bar.
+      - generic [ref=e39]:
+        - generic [ref=e42]:
+          - img [ref=e44]
+          - generic [ref=e54]:
+            - heading "old monk" [level=3] [ref=e56]
+            - generic [ref=e57]:
+              - generic [ref=e58]: "4"
+              - generic [ref=e59]: Boxes
+            - generic [ref=e61]: Contains 96 Bottles Total
+        - generic [ref=e62]:
+          - generic [ref=e63]:
+            - heading "Receive Supplier Delivery" [level=2] [ref=e64]:
+              - img [ref=e65]
+              - text: Receive Supplier Delivery
+            - generic [ref=e67]:
+              - generic [ref=e68]:
+                - generic [ref=e69]: Brand
+                - combobox [ref=e70]:
+                  - option "Select Brand..." [selected]
+                  - option "old monk"
+              - generic [ref=e71]:
+                - generic [ref=e72]: Boxes Received
+                - spinbutton [ref=e73]
+              - button "Add to Godown" [ref=e74]
+          - generic [ref=e75]:
+            - heading "Transfer to Counter" [level=2] [ref=e76]:
+              - img [ref=e77]
+              - text: Transfer to Counter
+            - generic [ref=e80]:
+              - generic [ref=e81]:
+                - generic [ref=e82]: Brand
+                - combobox [ref=e83]:
+                  - option "Select Brand..." [selected]
+                  - option "old monk"
+              - generic [ref=e84]:
+                - generic [ref=e85]: Boxes to Transfer
+                - spinbutton [ref=e86]
+              - button "Move to Bar" [ref=e87]
+  - button "Open Next.js Dev Tools" [ref=e93] [cursor=pointer]:
+    - img [ref=e94]
+  - alert [ref=e97]
+```
