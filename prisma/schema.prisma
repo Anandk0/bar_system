@@ -1,0 +1,78 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Brand {
+  id                Int      @id @default(autoincrement())
+  name              String   @unique
+  bottlesPerBox     Int
+  standardPrice     Float
+  mrpPrice          Float
+  boxPrice          Float    @default(0)
+  
+  godownInventory   GodownInventory?
+  counterInventory  CounterInventory?
+  transactions      TransactionHistory[]
+  shiftRecords      DailyShiftRecord[]
+  exceptions        ExceptionLog[]
+  
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+model GodownInventory {
+  id        Int      @id @default(autoincrement())
+  brandId   Int      @unique
+  boxes     Int      @default(0)
+  brand     Brand    @relation(fields: [brandId], references: [id])
+  updatedAt DateTime @updatedAt
+}
+
+model CounterInventory {
+  id        Int      @id @default(autoincrement())
+  brandId   Int      @unique
+  bottles   Int      @default(0)
+  brand     Brand    @relation(fields: [brandId], references: [id])
+  updatedAt DateTime @updatedAt
+}
+
+model TransactionHistory {
+  id            Int      @id @default(autoincrement())
+  brandId       Int
+  type          String   // "STOCK_IN" or "TRANSFER_TO_COUNTER"
+  quantityBoxes Int
+  brand         Brand    @relation(fields: [brandId], references: [id])
+  createdAt     DateTime @default(now())
+}
+
+model DailyShiftRecord {
+  id                  Int      @id @default(autoincrement())
+  date                DateTime @default(now())
+  brandId             Int
+  openingBottles      Int
+  transferredBottles  Int      @default(0)
+  closingBottles      Int
+  standardBottlesSold Int      @default(0)
+  mrpBottlesSold      Int      @default(0)
+  freeBottles         Int      @default(0)
+  totalRevenue        Float    @default(0)
+  brand               Brand    @relation(fields: [brandId], references: [id])
+  exceptions          ExceptionLog[]
+}
+
+model ExceptionLog {
+  id            Int      @id @default(autoincrement())
+  shiftId       Int?
+  brandId       Int
+  quantity      Int
+  type          String   // "MRP" or "FREE"
+  recipientName String
+  createdAt     DateTime @default(now())
+  
+  shift         DailyShiftRecord? @relation(fields: [shiftId], references: [id])
+  brand         Brand             @relation(fields: [brandId], references: [id])
+}
