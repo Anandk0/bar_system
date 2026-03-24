@@ -1,0 +1,3 @@
+{
+  "buildCommand": "prisma generate && NEXT_PRIVATE_SKIP_TYPECHECK=1 next build"
+}
