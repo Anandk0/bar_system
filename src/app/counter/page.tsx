@@ -1,6 +1,8 @@
 import { currentCounterInventory } from '@/app/actions/shifts'
 import CounterClient from './CounterClient'
 
+export const dynamic = 'force-dynamic'
+
 export default async function CounterPage() {
   const inventory = await currentCounterInventory()
   return (

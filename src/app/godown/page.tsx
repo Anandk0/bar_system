@@ -2,6 +2,8 @@ import { getGodownInventory } from '@/app/actions/inventory'
 import { getBrands } from '@/app/actions/brands'
 import GodownClient from './GodownClient'
 
+export const dynamic = 'force-dynamic'
+
 export default async function GodownPage() {
   const inventory = await getGodownInventory()
   const brands = await getBrands()
