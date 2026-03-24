@@ -16,4 +16,5 @@ export default async function GodownPage() {
       <GodownClient inventory={inventory} brands={brands} />
     </div>
   )
+
 }
