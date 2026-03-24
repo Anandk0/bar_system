@@ -1,0 +1,45 @@
+
+> barproject@0.1.0 lint
+> eslint
+
+
+D:\barproject\src\app\actions\__tests__\shifts.test.ts
+  24:5   error    Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+  28:5   error    Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+  32:5   error    Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+  38:11  warning  'result' is assigned a value but never used                                                                          @typescript-eslint/no-unused-vars
+
+D:\barproject\src\app\actions\shifts.ts
+  4:10  warning  'revalidatePath' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\barproject\src\app\counter\CounterClient.tsx
+   5:10  warning  'GlassWater' is defined but never used    @typescript-eslint/no-unused-vars
+   5:35  warning  'Plus' is defined but never used          @typescript-eslint/no-unused-vars
+  23:14  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  72:14  warning  'e' is defined but never used             @typescript-eslint/no-unused-vars
+  72:17  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\barproject\src\app\godown\GodownClient.tsx
+   5:38  warning  'Package' is defined but never used                                                                                                                                                                                                                                                                                                                                                        @typescript-eslint/no-unused-vars
+   8:37  error    The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  35:19  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+
+D:\barproject\src\app\reports\ReportsClient.tsx
+  5:10  warning  'DollarSign' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\barproject\src\app\settings\SettingsClient.tsx
+   8:37  error    The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  30:14  warning  'err' is defined but never used                                                                                                                                                                                                                                                                                                                                                            @typescript-eslint/no-unused-vars
+
+D:\barproject\src\lib\prisma.ts
+  14:1   error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+  15:65  error  Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+
+✖ 18 problems (10 errors, 8 warnings)
+
