@@ -19,7 +19,8 @@ export async function currentCounterInventory() {
 
 export async function closeDailyShift(counts: ShiftCloseData[]) {
   // Execute closing for all submitted brands inside a single transation
-  return await prisma.$transaction(async (tx) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return await prisma.$transaction(async (tx: any) => {
     
     // We will save all the new shift records
     const newRecords = []
